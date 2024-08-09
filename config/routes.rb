@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     
   end
 
+   # Move this outside the listings resource block
+  get 'about', to: 'static_pages#about', as: 'about'
+
   namespace :listings do
     resource :file_uploads, only: [:create], module: :listings 
   end
