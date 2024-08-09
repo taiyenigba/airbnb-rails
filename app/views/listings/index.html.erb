@@ -1,18 +1,18 @@
 <div class="w-full">
   <% content_for :title, "Listings" %>
 
-  <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Listings</h1>
-    <%= link_to "New listing", new_listing_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
-  </div>
-  <br/>
+  <!-- Search Form -->
+ <div class="mb-4">
+  <%= form_with url: listings_path, method: :get, local: true, class: "flex items-center" do %>
+    <input type="text" name="query" value="<%= params[:query] %>" placeholder="Search listings..." class="w-full rounded-lg bg-gray-50 p-2 border border-gray-300">
+    <button type="submit" class="ml-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Search</button>
+  <% end %>
+</div>
+
+  <!-- Listings Display -->
   <div id="listings" class="w-full grid md:grid-cols-4 gap-8">
     <% @listings.each do |listing| %>
       <%= render "listing_card", listing: listing %>
     <% end %>
-  </div>
-
-  <div class="pagination">
-    <%= paginate @listings %>
   </div>
 </div>

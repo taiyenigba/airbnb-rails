@@ -1,15 +1,16 @@
 class ListingsController < ApplicationController
   before_action :set_listing, only: %i[ show edit update destroy photos ]
-
-  # GET /listings or /listings.json
-   # GET /listings or /listings.json
-   def index
-    @listings = Listing.page(params[:page]).per(8) # 10 listings per page
+  
+  def index
+    if params[:query].present?
+      @listings = Listing.where('title ILIKE ?', "%#{params[:query]}%")
+                         .page(params[:page])
+                         .per(8)
+    else
+      @listings = Listing.page(params[:page]).per(8)
+    end
   end
-  # GET /listings/1 or /listings/1.json
-  def show
-  end
-
+  
   # GET /listings/new
   def new
     @listing = Listing.new
