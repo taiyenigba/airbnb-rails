@@ -2,6 +2,13 @@
   <div class="max-w-xl w-full mx-auto shadow-lg bg-gray-200 rounded-lg py-8">
     <h2 class="text-xl mb-4 text-center">Log in</h2>
 
+    <!-- Display Flash Messages -->
+    <% if flash[:alert] %>
+      <div class="bg-red-100 text-red-800 p-4 rounded-lg mb-4">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+
     <div class="w-3/4 mx-auto">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field mb-4">
