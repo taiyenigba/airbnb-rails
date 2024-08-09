@@ -12,3 +12,15 @@
 
 */
 @import 'actiontext.css';
+
+.pagination {
+  @apply flex justify-center mt-4;
+}
+
+.pagination .page-item {
+  @apply mx-1;
+}
+
+.pagination .page-link {
+  @apply py-2 px-4 bg-gray-200 hover:bg-gray-300 rounded;
+}

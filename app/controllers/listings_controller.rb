@@ -2,10 +2,10 @@ class ListingsController < ApplicationController
   before_action :set_listing, only: %i[ show edit update destroy photos ]
 
   # GET /listings or /listings.json
-  def index
-    @listings = Listing.all
+   # GET /listings or /listings.json
+   def index
+    @listings = Listing.page(params[:page]).per(8) # 10 listings per page
   end
-
   # GET /listings/1 or /listings/1.json
   def show
   end

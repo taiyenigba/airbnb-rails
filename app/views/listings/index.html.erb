@@ -8,10 +8,11 @@
   <br/>
   <div id="listings" class="w-full grid md:grid-cols-4 gap-8">
     <% @listings.each do |listing| %>
-    
       <%= render "listing_card", listing: listing %>
     <% end %>
   </div>
-</div>
 
- 
+  <div class="pagination">
+    <%= paginate @listings %>
+  </div>
+</div>
