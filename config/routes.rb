@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :listings do
     get "photos", to: "listings#photos", on: :member
+    
+  end
+
+  namespace :listings do
+    resource :file_uploads, only: [:create], module: :listings 
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
