@@ -1,5 +1,8 @@
 <div class="w-full h-16 flex items-center border-b border-gray-100 fixed top-0 bg-white">
-<div class="max-w-7xl w-full mx-auto">
-<%= link_to "Home", "/" %>
+<div class="container px-5 w-full mx-auto">
+<%= link_to "/", class: "text-red-600 font-bold text-xl flex items-end gap-2" do %>
+<%= image_tag "logo.nav.png", class: "w-10 object-cover" %>
+<span> Airbnb </span>
+<% end%>
 </div>
     </div>
