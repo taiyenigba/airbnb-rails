@@ -1,9 +1,38 @@
-<div class="flex gap-8 mx-auto rounded-lg overflow-hidden relative">
-  <%= image_tag @listing.images.first, class: "w-70 h-80" %>
-  <div class="grid grid-cols-2 gap-8 flex-wrap">
-    <% @listing.images[1..4].each do |image| %>
-      <%= image_tag image, class: "h-36" %>
-    <% end %>
+<div class="flex flex-col max-w-3xl w-full mx-auto">
+  <div class="flex justify-between items-center">
+    <%= link_to "Back to All listings", listings_path, class: "bg-gray-100 rounded-lg border-2 border-gray-900 mr-auto p-2" %>
+    <%= link_to "Edit listing", edit_listing_path(@listing) %>
   </div>
-  <%= link_to "show all photos", photos_listing_path(@listing), class: "absolute bottom-4 right-4 bg-white rounded-lg p-2" %>
+  <br/>
+  <% if @listing.images.any? %>
+    <div class="flex gap-8 rounded-lg overflow-hidden relative">
+      <%= image_tag @listing.images.first, class: "w-70 h-80" %>
+      <div class="grid grid-cols-2 gap-8 flex-wrap">
+        <% @listing.images[1..4].each do |image| %>
+          <%= image_tag image, class: "h-36" %>
+        <% end %>
+      </div>
+      <%= link_to "show all photos", photos_listing_path(@listing), class: "absolute bottom-4 right-4 bg-white rounded-lg p-2" %>
+    </div>
+  <% end %>
+  <br/>
+  <h1 class="text-2xl font-semibold"><%= @listing.title %></h1>
+  <%= @listing.description %>
+
+  <div class="grid grid-cols-3 gap-8 mt-8">
+<div class="shadow-lg  h-40 flex flex-col items-center justify-center rounded-lg">
+      <i class="fa-solid fa-bed fa-2x text-grey-700"></i>
+      <span class="text-3xl text-grey-700 font-semibold"><%= @listing.bedrooms %></span>
+    </div>
+
+    <div class="shadow-lg  h-40 flex flex-col items-center justify-center rounded-lg">
+      <i class="fa-solid fa-toilet fa-2x text-grey-700"></i>
+      <span class="text-3xl text-grey-700 font-semibold"><%= @listing.bathrooms %></span>
+    </div>
+
+    <div class="shadow-lg  h-40 flex flex-col items-center justify-center rounded-lg">
+      <i class="fa-solid fa-person fa-2x text-grey-700"></i>
+      <span class="text-3xl text-grey-700 font-semibold"><%= @listing.people_limit %></span>
+    </div>
+  </div>
 </div>
