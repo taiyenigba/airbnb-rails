@@ -93,7 +93,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
-    concurrent-ruby (1.3.3)
+    concurrent-ruby (1.3.4)
     connection_pool (2.4.1)
     crass (1.0.6)
     date (3.3.4)
@@ -109,12 +109,7 @@ GEM
     drb (2.2.1)
     error_highlight (0.6.0)
     erubi (1.13.0)
-    ffi (1.17.0-aarch64-linux-gnu)
-    ffi (1.17.0-arm-linux-gnu)
-    ffi (1.17.0-arm64-darwin)
-    ffi (1.17.0-x86-linux-gnu)
-    ffi (1.17.0-x86_64-darwin)
-    ffi (1.17.0-x86_64-linux-gnu)
+    ffi (1.15.4)
     friendly_id (5.5.1)
       activerecord (>= 4.0.0)
     globalid (1.2.1)
@@ -239,7 +234,7 @@ GEM
     responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
-    rexml (3.3.4)
+    rexml (3.3.5)
       strscan
     ruby-vips (2.2.2)
       ffi (~> 1.12)
@@ -264,17 +259,17 @@ GEM
     strscan (3.1.0)
     tailwind_devise (0.0.1)
       rails (>= 6.0)
-    tailwindcss-rails (2.7.1)
+    tailwindcss-rails (2.7.2)
       railties (>= 7.0.0)
-    tailwindcss-rails (2.7.1-aarch64-linux)
+    tailwindcss-rails (2.7.2-aarch64-linux)
       railties (>= 7.0.0)
-    tailwindcss-rails (2.7.1-arm-linux)
+    tailwindcss-rails (2.7.2-arm-linux)
       railties (>= 7.0.0)
-    tailwindcss-rails (2.7.1-arm64-darwin)
+    tailwindcss-rails (2.7.2-arm64-darwin)
       railties (>= 7.0.0)
-    tailwindcss-rails (2.7.1-x86_64-darwin)
+    tailwindcss-rails (2.7.2-x86_64-darwin)
       railties (>= 7.0.0)
-    tailwindcss-rails (2.7.1-x86_64-linux)
+    tailwindcss-rails (2.7.2-x86_64-linux)
       railties (>= 7.0.0)
     thor (1.3.1)
     timeout (0.4.1)
@@ -302,11 +297,18 @@ GEM
 
 PLATFORMS
   aarch64-linux
+  aarch64-linux-gnu
+  aarch64-linux-musl
   arm-linux
+  arm-linux-gnu
+  arm-linux-musl
   arm64-darwin
   x86-linux
+  x86-linux-gnu
+  x86-linux-musl
   x86_64-darwin
-  x86_64-linux
+  x86_64-linux-gnu
+  x86_64-linux-musl
 
 DEPENDENCIES
   bootsnap
@@ -314,6 +316,7 @@ DEPENDENCIES
   debug
   devise (~> 4.9)
   error_highlight (>= 0.4.0)
+  ffi (= 1.15.4)
   friendly_id (~> 5.5.0)
   image_processing (~> 1.2)
   importmap-rails
